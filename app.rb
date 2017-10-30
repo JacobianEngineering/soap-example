@@ -9,13 +9,8 @@ class App < Sinatra::Base
   set :endpoint, '/action'
   set :wsdl_route, '/wsdl'
 
-  soap :test, in: { hello: :string }, out: nil do
+  soap :cup, in: { hello: :string }, out: nil do
     params
   end
-
-  soap :ObjectTest, in: { TestObject: { a: :string, b: :string }}, out: { hello: :string } do
-    params
-  end
-
 
 end
