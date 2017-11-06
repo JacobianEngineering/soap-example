@@ -9,7 +9,13 @@ class App < Sinatra::Base
   set :endpoint, '/action'
   set :wsdl_route, '/wsdl'
 
-  soap :cup, in: { hello: :string }, out: nil do
+  soap :public, in: { argString: :string, argInt: :integer }, out: nil do
+    raise "Failed!!!!" if Integer(params[:argInt]) > 10
+    params
+  end
+
+  soap :secret, in: { argString: :string }, out: nil do
+    puts "Should not be called"
     params
   end
 

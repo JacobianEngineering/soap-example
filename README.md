@@ -19,3 +19,10 @@ You can run tests like this
 You can run the client like this (ensure that you run `./bin/server` first or it won't work:
 
     ./bin/client
+
+## running via ngrok
+
+Can also run this through ngrok.
+
+	./bin/server
+	ngrok http 9393
